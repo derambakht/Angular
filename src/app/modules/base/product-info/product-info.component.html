@@ -1,0 +1,76 @@
+<h1>مشخصات محصول</h1>
+<form [formGroup]="productForm" (ngSubmit)="saveData()">
+    <mat-card>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="عنوان محصول" formControlName="productName">
+            <mat-error *ngIf="productForm.controls.productName.hasError('required')">
+                نام محصول <strong>اجباری است</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>گروه محصول</mat-label>
+            <mat-select formControlName="categoryId" (selectionChange)="changeCategory()">
+                <mat-option value="101">تلویزیون</mat-option>
+                <mat-option value="102">لپ تاپ</mat-option>
+                <mat-option value="103">موبایل</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="قیمت" formControlName="price">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>توضیحات محصول</mat-label>
+            <textarea matInput formControlName="body"></textarea>
+        </mat-form-field>
+
+
+        <!-- <label>
+        Product Name:
+        <input type="text" >
+        <p *ngIf="productForm.controls.productName.errors.required">فیلد عنوان اجباری است</p>
+        <p *ngIf="productForm.controls.productName.errors.minlength">حداقل 3 کاراکتر</p>
+      </label> -->
+
+        <div formGroupName="productDetails">
+            <br />
+            <h4>مشخصات انبارداری محصول</h4>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="کد کالا" formControlName="code">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="ُسریال کالا" formControlName="serial">
+            </mat-form-field>
+        </div>
+    </mat-card>
+    <br />
+    <mat-card>
+        <button mat-raised-button color="primary" (click)="addFeatures()">افزودن ویژگی جدید</button>
+        <div formArrayName="features" *ngFor="let feature of features.controls;let i=index;">
+            <div formGroupName={{i}}>
+                <!-- <mat-form-field class="example-full-width">
+                    <input matInput placeholder="عنوان ویژگی" formControlName="title">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="نوع ویژگی" formControlName="text">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="ترتیب نمایش" formControlName="sort">
+                </mat-form-field> -->
+                <app-product-feature [data]="feature"></app-product-feature>
+            </div>
+        </div>
+    </mat-card>
+    <br />
+    <mat-card>
+        <button mat-raised-button color="accent" type="submit" [disabled]="!productForm.valid">ذخیره اطلاعات</button>
+        <p>
+            Real-time data: {{ productForm.value | json }}
+        </p>
+        <p>
+            Your form status is : {{ productForm.status }}
+        </p>
+    </mat-card>
+
+</form>

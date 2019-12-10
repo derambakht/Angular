@@ -1,0 +1,26 @@
+<div>
+    <div class="card m-3">
+        <div class="card-header">
+            Voucher Info
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label>شماره سند : </label>
+                <input type="text" class="form-control" [(ngModel)]="voucherInfo.code">
+            </div>
+            <div class="form-group">
+                <label>عنوان سند : </label>
+                <input type="text" class="form-control" [(ngModel)]="voucherInfo.title">
+            </div>
+            <div class="form-group">
+                <label>شرح سند :</label>
+                <input type="text" class="form-control" [(ngModel)]="voucherInfo.description">
+            </div>
+            <div class="form-group">
+                <button (click)="addNewRow()">افزودن ردیف سند</button>
+                <voucher-detail-info #detail [detailInfo]="item" *ngFor="let item of voucherInfo.voucherDetails"></voucher-detail-info>
+            </div>
+            <button (click)="save()">ذخیره</button>
+        </div>
+    </div>
+</div>

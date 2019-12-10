@@ -1,0 +1,54 @@
+<div>
+    <form [formGroup]="voucherForm" (ngSubmit)="save()">
+        <div class="card m-3">
+            <div class="card-header">
+                Voucher Info With Reactive Forms
+            </div>
+            <div class="card-body">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="کد سند" formControlName="code">
+                    <mat-error *ngIf="voucherForm.controls.code.hasError('required')">
+                        نام محصول <strong>اجباری است</strong>
+                    </mat-error>
+                    <mat-error *ngIf="voucherForm.controls.code.hasError('minlength')">
+                        حداقل 3 کاراکتر
+                    </mat-error>
+                </mat-form-field>
+                <!-- <div class="form-group">
+                    <label>شماره سند : </label>
+                    <input type="text" class="form-control" formControlName="code">
+                    <span *ngIf="voucherForm.touched && voucherForm.controls.code.hasError('required')">
+                           شماره سند اجباری است
+                    </span>
+                    <span *ngIf="voucherForm.touched && voucherForm.controls.code.hasError('minlength')">
+                         حداقل 3 کاراکتر
+                     </span>
+                </div> -->
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="عنوان" formControlName="title">
+                    <mat-error *ngIf="voucherForm.controls.title.hasError('required')">
+                        اجباری
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="توضیحات سند" formControlName="description">
+                </mat-form-field>
+                <!-- <div class="form-group">
+                <button (click)="addNewRow()">افزودن ردیف سند</button>
+                <voucher-detail-info #detail [detailInfo]="item" *ngFor="let item of voucherInfo.voucherDetails"></voucher-detail-info>
+            </div> -->
+                <button type="submit" [disabled]="!voucherForm.valid">ذخیره</button>
+                <hr />
+                <p>
+                    {{voucherForm.value | json}}
+                </p>
+                <p>
+                    Your form status is : {{ voucherForm.status }}
+                </p>
+                <p>
+                    Touch form : {{ voucherForm.touched }}
+                </p>
+            </div>
+        </div>
+    </form>
+</div>
