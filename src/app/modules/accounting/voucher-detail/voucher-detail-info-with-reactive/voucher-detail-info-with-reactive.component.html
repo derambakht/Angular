@@ -1,1 +1,18 @@
-<p>voucher-detail-info-with-reactive works!</p>
+<form [formGroup]="info">
+    <div class="card">
+        <div class="d-flex">
+            <div>
+                Row Number : <input formControlName="rowNumber" />
+            </div>
+            <div>
+                Kol : <input formControlName="kol" />
+            </div>
+            <div>
+                Moein : <input formControlName="moein" />
+            </div>
+            <div>
+                Tafsil : <input formControlName="taf" />
+            </div>
+        </div>
+    </div>
+</form>

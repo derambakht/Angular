@@ -33,10 +33,11 @@
                 <mat-form-field class="example-full-width">
                     <input matInput placeholder="توضیحات سند" formControlName="description">
                 </mat-form-field>
-                <!-- <div class="form-group">
-                <button (click)="addNewRow()">افزودن ردیف سند</button>
-                <voucher-detail-info #detail [detailInfo]="item" *ngFor="let item of voucherInfo.voucherDetails"></voucher-detail-info>
-            </div> -->
+                <div class="form-group">
+                    <button (click)="addNewRow()">افزودن ردیف سند</button>
+
+                    <voucher-detail-info-with-reactive [info]="item" *ngFor="let item of voucherForm.controls.details.controls"></voucher-detail-info-with-reactive>
+                </div>
                 <button type="submit" [disabled]="!voucherForm.valid">ذخیره</button>
                 <hr />
                 <p>
