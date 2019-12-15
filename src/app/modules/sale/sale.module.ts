@@ -6,14 +6,15 @@ import { CustomerListComponent } from './customer/customer-list/customer-list.co
 import { CustomerInfoComponent } from './customer/customer-info/customer-info.component';
 import { FormsModule } from '@angular/forms';
 import { CustomerAddressComponent } from './customer/customer-address/customer-address.component';
-
+import { SharedModule } from '../shared-module';
 
 @NgModule({
   declarations: [CustomerListComponent, CustomerInfoComponent, CustomerAddressComponent],
   imports: [
     CommonModule,
     FormsModule,
-    SaleRoutingModule
+    SaleRoutingModule,
+    SharedModule,
   ]
 })
 export class SaleModule { }

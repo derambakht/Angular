@@ -8,11 +8,9 @@
 }
 
 .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin: 0 2rem;
+    height: 95%;
+    width: 95%;
+    padding: 0 .2rem;
 }
 
 .example-sidenav {
@@ -28,7 +26,7 @@ mat-slider {
     margin: 1rem;
     padding: 1rem;
     min-height: 500px;
-    width: 100%;
+    width: 90%;
 }
 
 .my-box {

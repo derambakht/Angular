@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Voucher } from 'src/app/models/accounting/Voucher';
 import { VoucherDetail } from 'src/app/models/accounting/VoucherDetail';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { ValidationService } from 'src/app/services/validation.service';
 
 @Component({
   selector: 'app-voucher-info-with-reactive',
@@ -19,17 +20,17 @@ export class VoucherInfoWithReactiveComponent implements OnInit {
   ngOnInit() {
     var detailsArray = [];
     detailsArray.push(this.generateDetail(new VoucherDetail()));
-    
-    // for (let i = 0; i < this.voucher.VoucherDetails.Length; i++) {
-    //   arr.push(this.generateProductFeature(this.voucher.VoucherDetails[i]))
-
-    // }
 
     this.voucherForm = this.fb.group({
-      code: ['', [Validators.required, Validators.minLength(3)]],
+      code: ['', [Validators.required, ValidationService.number]],
+      confirmCode: ['', [Validators.required, ValidationService.number]],
       title: ['', Validators.required],
       description: [''],
       details: this.fb.array(detailsArray)
+    }, {
+      validator: [
+        ValidationService.match('code', 'confirmCode'),
+      ]
     });
   }
 

@@ -62,6 +62,10 @@ const TREE_DATA: MenuItem[] = [
       }
     ]
   },
+  {
+    name: 'فرم داینامیک',
+    path: '/dynamicform'
+  },
 ];
 
 interface ExampleFlatNode {

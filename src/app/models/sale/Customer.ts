@@ -6,6 +6,7 @@ export class Customer{
        public firstName:string,
        public lastName:string,
        public customerCode:string,
+       public grade:number = 1,
        public addressList: CustomerAddress[] = []
     ){}
 }

@@ -9,16 +9,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VoucherInfoWithReactiveComponent } from './voucher/voucher-info-with-reactive/voucher-info-with-reactive.component';
 import { VoucherDetailInfoWithReactiveComponent } from './voucher-detail/voucher-detail-info-with-reactive/voucher-detail-info-with-reactive.component';
 import { CustomMaterialModule } from '../custom-material-module';
+import { SharedModule } from '../shared-module';
 
 
 @NgModule({
-  declarations: [VoucherListComponent, VoucherInfoComponent, VoucherDetailInfoComponent, VoucherInfoWithReactiveComponent, VoucherDetailInfoWithReactiveComponent],
+  declarations: [VoucherListComponent, VoucherInfoComponent, VoucherDetailInfoComponent, 
+    VoucherInfoWithReactiveComponent, VoucherDetailInfoWithReactiveComponent],
   imports: [
     CommonModule,
     AccountingRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     CustomMaterialModule,
+    SharedModule
   ]
 })
 export class AccountingModule { }

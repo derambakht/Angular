@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ChartSampleComponent } from './components/chart-sample/chart-sample.component';
+import { MaterialSampleFormComponent } from './components/dynamic-forms-sample/material-sample-form.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,9 @@ const routes: Routes = [
   {
     path: 'sale',
     loadChildren: () => import('./modules/sale/sale.module').then(m => m.SaleModule)
+  },
+  {
+    path: 'dynamicform', component : MaterialSampleFormComponent
   },
 ];
 

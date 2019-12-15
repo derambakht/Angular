@@ -10,6 +10,7 @@ import { CustomerService } from 'src/app/services/sale/customer.service';
 export class CustomerListComponent implements OnInit {
 
   customers:Customer[] = [];
+  price = 1500;
 
   constructor(private customerService:CustomerService) { }
 

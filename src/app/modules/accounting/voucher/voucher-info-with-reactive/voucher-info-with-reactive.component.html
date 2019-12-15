@@ -7,28 +7,21 @@
             <div class="card-body">
                 <mat-form-field class="example-full-width">
                     <input matInput placeholder="کد سند" formControlName="code">
-                    <mat-error *ngIf="voucherForm.controls.code.hasError('required')">
+                    <error-message [control]="voucherForm.controls.code"></error-message>
+                    <!-- <mat-error *ngIf=" voucherForm.controls.code.hasError( 'required')">
                         نام محصول <strong>اجباری است</strong>
                     </mat-error>
-                    <mat-error *ngIf="voucherForm.controls.code.hasError('minlength')">
+                    <mat-error *ngIf="voucherForm.controls.code.hasError( 'minlength')">
                         حداقل 3 کاراکتر
-                    </mat-error>
+                    </mat-error> -->
                 </mat-form-field>
-                <!-- <div class="form-group">
-                    <label>شماره سند : </label>
-                    <input type="text" class="form-control" formControlName="code">
-                    <span *ngIf="voucherForm.touched && voucherForm.controls.code.hasError('required')">
-                           شماره سند اجباری است
-                    </span>
-                    <span *ngIf="voucherForm.touched && voucherForm.controls.code.hasError('minlength')">
-                         حداقل 3 کاراکتر
-                     </span>
-                </div> -->
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="تکرار کد سند" formControlName="confirmCode">
+                    <error-message [control]="voucherForm.controls.confirmCode"></error-message>
+                </mat-form-field>
                 <mat-form-field class="example-full-width">
                     <input matInput placeholder="عنوان" formControlName="title">
-                    <mat-error *ngIf="voucherForm.controls.title.hasError('required')">
-                        اجباری
-                    </mat-error>
+                    <error-message [control]="voucherForm.controls.title"></error-message>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
                     <input matInput placeholder="توضیحات سند" formControlName="description">

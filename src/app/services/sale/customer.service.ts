@@ -15,7 +15,10 @@ export class CustomerService {
     addressInfo.sort = 1;
     addressInfo.id = 101;
 
-    this.customers.push(new Customer(1, "ali", "rezaei", "5646464654"));
+    this.customers.push(new Customer(1, "ali", "rezaei", "0323236359", 3));
+    this.customers.push(new Customer(2, "reza", "amini", "0022114455", 2));
+    this.customers.push(new Customer(3, "mona", "karimi", "8855441122", 4));
+    this.customers.push(new Customer(4, "omid", "yavari", "1144552233", 5));
     this.customers[0].addressList.push(addressInfo);
   }
 
