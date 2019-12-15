@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(private permissionsService: NgxPermissionsService) {}
+
+ngOnInit(): void {
+  const userPermissions = ["ADMIN", "EDITOR"];
+  this.permissionsService.loadPermissions(userPermissions);
+}
+
   title = 'MaterialSampleApp';
   showFiller = false;
 

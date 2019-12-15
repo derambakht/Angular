@@ -10,6 +10,7 @@ import { VoucherInfoWithReactiveComponent } from './voucher/voucher-info-with-re
 import { VoucherDetailInfoWithReactiveComponent } from './voucher-detail/voucher-detail-info-with-reactive/voucher-detail-info-with-reactive.component';
 import { CustomMaterialModule } from '../custom-material-module';
 import { SharedModule } from '../shared-module';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SharedModule } from '../shared-module';
     FormsModule,
     ReactiveFormsModule,
     CustomMaterialModule,
-    SharedModule
+    SharedModule,
+    NgxPermissionsModule.forRoot()
   ]
 })
 export class AccountingModule { }

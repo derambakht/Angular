@@ -39,7 +39,7 @@ import { customValidator, customDateRangeValidator, customForbiddenValidator, cu
     AccountingModule,
     DynamicFormsCoreModule.forRoot(),
     DynamicFormsMaterialUIModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ValidationService,

@@ -6,13 +6,15 @@ import { CustomMaterialModule } from './custom-material-module';
 import { BestCustomerPipe } from '../pipes/best-customer.pipe';
 import { NumberToPersianLetterPipe } from '../pipes/number-to-persian-letter.pipe';
 import { NationalCodePipe } from '../pipes/national-code.pipe';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
  imports:[
      CommonModule,
      FormsModule, 
      ReactiveFormsModule,
-     CustomMaterialModule
+     CustomMaterialModule,
+     NgxPermissionsModule.forRoot()
     ],
  declarations: [
     ErrorMessageComponent,
@@ -24,7 +26,7 @@ exports: [
     ErrorMessageComponent,
     BestCustomerPipe,
     NumberToPersianLetterPipe,
-    NationalCodePipe
+    NationalCodePipe,
 ]
 })
 export class SharedModule { }

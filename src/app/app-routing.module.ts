@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ChartSampleComponent } from './components/chart-sample/chart-sample.component';
 import { MaterialSampleFormComponent } from './components/dynamic-forms-sample/material-sample-form.component';
+import { NgxPermissionsGuard } from 'ngx-permissions';
 
 
 const routes: Routes = [
@@ -15,11 +16,28 @@ const routes: Routes = [
   },
   {
     path: 'sale',
+    data: {
+      permissions: {
+        except: 'ADMIN',
+        redirectTo: '/products'
+      }
+    },
+    canLoad: [NgxPermissionsGuard],
     loadChildren: () => import('./modules/sale/sale.module').then(m => m.SaleModule)
   },
   {
-    path: 'dynamicform', component : MaterialSampleFormComponent
+    path: 'dynamicform', component : MaterialSampleFormComponent,
+    canActivate: [NgxPermissionsGuard],
+    data: {
+      permissions: {
+        only: 'ADMIN',
+        redirectTo: '/'
+      }
+    }
   },
+  // {
+  //   path:'**', component: PageNotFound 
+  // },
 ];
 
 @NgModule({

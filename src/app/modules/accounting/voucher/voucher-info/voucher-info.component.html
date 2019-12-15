@@ -1,7 +1,7 @@
 <div>
     <div class="card m-3">
         <div class="card-header">
-            Voucher Info
+            Voucher Info Version 1
         </div>
         <div class="card-body">
             <div class="form-group">
@@ -17,7 +17,10 @@
                 <input type="text" class="form-control" [(ngModel)]="voucherInfo.description">
             </div>
             <div class="form-group">
-                <button (click)="addNewRow()">افزودن ردیف سند</button>
+                <ng-template ngxPermissionsOnly="ADMIN">
+                    <button (click)="addNewRow()">افزودن ردیف سند</button>
+                </ng-template>
+
                 <voucher-detail-info #detail [detailInfo]="item" *ngFor="let item of voucherInfo.voucherDetails"></voucher-detail-info>
             </div>
             <button (click)="save()">ذخیره</button>
