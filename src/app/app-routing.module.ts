@@ -4,11 +4,15 @@ import { HomeComponent } from './components/home/home.component';
 import { ChartSampleComponent } from './components/chart-sample/chart-sample.component';
 import { MaterialSampleFormComponent } from './components/dynamic-forms-sample/material-sample-form.component';
 import { NgxPermissionsGuard } from 'ngx-permissions';
+import { CategoryListComponent } from './components/category-list/category-list.component';
 
 
 const routes: Routes = [
   {
     path:'', component: HomeComponent , //outlet:"outlet1"
+  },
+  {
+    path:'categories', component: CategoryListComponent
   },
   {
     path: 'products',

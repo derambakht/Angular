@@ -14,6 +14,10 @@ const TREE_DATA: MenuItem[] = [
     path: '/'
   },
   {
+    name: 'گروه بندی محصولات',
+    path: '/categories'
+  },
+  {
     name: 'اطلاعات پایه',
     path: '',
     children: [

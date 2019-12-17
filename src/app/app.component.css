@@ -36,3 +36,12 @@ mat-slider {
     height: 200px;
     width: 100%;
 }
+
+.cta-row {
+    background: #f3f3f3;
+    color: black;
+}
+
+.back-button {
+    padding-left: 8px;
+}

@@ -7,6 +7,10 @@ import { BestCustomerPipe } from '../pipes/best-customer.pipe';
 import { NumberToPersianLetterPipe } from '../pipes/number-to-persian-letter.pipe';
 import { NationalCodePipe } from '../pipes/national-code.pipe';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { ShowAlertDirective } from '../directives/show-alert.directive';
+import { RainbowDirective } from '../directives/rainbow.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { SampleDirective } from '../directives/sample.directive';
 
 @NgModule({
  imports:[
@@ -14,19 +18,28 @@ import { NgxPermissionsModule } from 'ngx-permissions';
      FormsModule, 
      ReactiveFormsModule,
      CustomMaterialModule,
-     NgxPermissionsModule.forRoot()
+     NgxPermissionsModule.forRoot(),
+     HttpClientModule,
     ],
  declarations: [
     ErrorMessageComponent,
     BestCustomerPipe,
     NumberToPersianLetterPipe,
-    NationalCodePipe
+    NationalCodePipe,
+    ShowAlertDirective,
+    RainbowDirective,
+    SampleDirective,
 ],
 exports: [
     ErrorMessageComponent,
     BestCustomerPipe,
     NumberToPersianLetterPipe,
     NationalCodePipe,
+    ShowAlertDirective,
+    RainbowDirective,
+    HttpClientModule,
+    SampleDirective,
+
 ]
 })
 export class SharedModule { }

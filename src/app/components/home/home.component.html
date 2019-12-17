@@ -1,1 +1,30 @@
 <p>home works!</p>
+
+<img src="../../../assets/images/chart-1.png" width="300" id="img-HomeComponent" showAlert />
+<img src="../../../assets/images/chart-1.png" width="300" id="testIdddddddddddd" showAlert />
+<div>
+    Categories :
+    <select>
+        <option *ngFor="let item of categories$ | async" value="item.categoryId">{{item.categoryName}}</option>
+    </select>
+    <!-- <p>
+        json : {{categories$ | async | json}}
+    </p> -->
+</div>
+<div>
+    Value 1 : <input rainbow style="font-size: 25px;width: 500px;border:5px red solid;" />
+</div>
+<div>
+    Value 2 : <input style="font-size: 25px;width: 500px;border:5px red solid;" />
+</div>
+<div>
+    Value 3 : <textarea style="font-size: 25px;width: 500px;border:5px red solid;" rainbow></textarea>
+</div>
+<hr />
+<div>
+    <p #myText> Value with ElementRef</p>
+    <button (click)="changeElementText()">Change Value</button>
+</div>
+<hr />
+<h3>joke list</h3>
+<joke-list></joke-list>

@@ -22,6 +22,11 @@ import {
 } from "@ng-dynamic-forms/core";
 import { MAT_CHIPS_DEFAULT_OPTIONS } from '@angular/material/chips';
 import { customValidator, customDateRangeValidator, customForbiddenValidator, customAsyncFormGroupValidator } from './components/dynamic-forms-sample/dynamic-form-validators';
+import { SharedModule } from './modules/shared-module';
+import { RainbowDirective } from './directives/rainbow.directive';
+import { JokeListComponent } from './components/joke-list/joke-list.component';
+import { SampleDirective } from './directives/sample.directive';
+import { CategoryListComponent } from './components/category-list/category-list.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,8 @@ import { customValidator, customDateRangeValidator, customForbiddenValidator, cu
     HomeComponent,
     ChartSampleComponent,
     MaterialSampleFormComponent,
+    JokeListComponent,
+    CategoryListComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,8 @@ import { customValidator, customDateRangeValidator, customForbiddenValidator, cu
     AccountingModule,
     DynamicFormsCoreModule.forRoot(),
     DynamicFormsMaterialUIModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
   ],
   providers: [
     ValidationService,

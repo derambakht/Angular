@@ -3,8 +3,10 @@
         <app-sidebar-menu></app-sidebar-menu>
     </mat-drawer>
     <div class="example-sidenav-content" style="width:100%;">
+        <div>مشاهده فقط برای ادمین</div>
+        <div id="btnAppComponentPrint" showAlert>پرینت</div>
+
         <ng-template ngxPermissionsOnly="ADMIN">
-            <div>مشاهده فقط برای ادمین</div>
         </ng-template>
         <router-outlet></router-outlet>
     </div>
